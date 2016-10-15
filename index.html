@@ -1,0 +1,449 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>简版开单</title>
+</head>
+<link rel="stylesheet" type="text/css" href="demo.css">
+</head>
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+	$(function(){
+		var flag=false;
+		$('.telescopic').click(function(){
+			if(flag == false){
+				$('.telescopic').html('>');
+				$('.telescopic').css('background','#fff');
+				$('.price-area').animate({'right':0},500);
+				flag=true
+			}else{
+				$('.telescopic').html('<');
+				$('.telescopic').css('background','#fffbe5');
+				$('.price-area').animate({'right':-222},500);
+				flag=false;
+			};
+		});
+	});
+</script>
+
+<body>
+<div class="content">
+	<div class="module-one mb-10">
+		<div class="module-one-top">
+			<table>
+				<tr>
+					<td style="min-width: 110px;">
+						<label class="fl mr-8"><em class="red-star fl">*</em>始发</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 110px;"> 
+						<label class="fl mr-8"><em class="red-star fl">*</em>到达</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 110px;">
+						<label class="fl mr-8">途经</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 140px;"> 
+						<label class="fl mr-8"><em class="red-star fl">*</em>运单号</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 240px;">
+						<label class="fl mr-8">客户单号</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 140px;">
+						<label class="fl mr-8"><em class="red-star fl">*</em>经办人</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 170px;">
+						<label class="fl mr-8"><em class="red-star fl">*</em>托运日期</label>
+						<input class="text fl" type="text">
+					</td>
+				</tr>
+				<tr>
+					<td style="min-width: 140px;">
+						<label class="fl mr-8 ml-12">项目编号</label>
+						<input class="text fl" type="text">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="module-one-bottom">
+			<table>
+				<tr>
+					<td width="45%" style="min-width: 470px;">
+						<label class="fl mr-8"><em class="red-star fl">*</em>发货人</label>
+						<input class="text fr" type="text" placeholder="姓名/电话/公司名称">
+					</td>
+					<td width="10%" rowspan="3" style="text-align: center; min-width: 100px;">
+						<img src="car.png" width="56px" height="34px" alt="">
+					</td>
+					<td width="45%" style="min-width: 470px;">
+						<label class="fl mr-8"><em class="red-star fl">*</em>收货人</label>
+						<input class="text fr" type="text" placeholder="姓名/电话/公司名称">
+					</td>
+				</tr>
+				<tr>
+					<td width="45%">
+						<label class="fl mr-8"><em class="red-star fl">*</em>联系电话</label>
+						<input class="text fr" type="text" placeholder="固定电话或手机">
+					</td>
+					<td width="45%">
+						<label class="fl mr-8"><em class="red-star fl">*</em>联系电话</label>
+						<input class="text fr" type="text" placeholder="固定电话或手机">
+					</td>
+				</tr>
+				<tr>
+					<td width="45%">
+						<label class="fl mr-8 ml-12">联系地址</label>
+						<input class="text fr" type="text" placeholder="如需任意输入则需进行配置">
+					</td>
+					<td width="45%">
+						<label class="fl mr-8 ml-12">联系地址</label>
+						<input class="text fr" type="text" placeholder="如需任意输入则需进行配置">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="module-two mb-10">
+		<h2 class="title-blue">
+			货物信息
+		</h2>
+		<div class="bg-gary">
+			<input type="button" class="add-goods" value="+" />
+			<input type="button" class="delete-goods" value="-" />
+		</div>
+		<div class="module-two-content">
+			<table class="goods-table">
+				<tr>
+				    <th style="min-width: 165px;">
+				    	<label><em class="red-star fl">*</em>货物名称</label>
+				    </th>
+				    <th style="min-width: 125px;">
+				    	<label>包装</label>
+			    	</th>
+				    <th style="min-width: 115px;">
+				    	<label><em class="red-star fl">*</em>件数</label>
+			    	</th>
+				    <th style="min-width: 125px;">
+				    	<label>重量<i>（公斤）</i></label>
+			    	</th>
+				    <th style="min-width: 125px;">
+				    	<label>体积<i>（立方）</i></label>
+			    	</th>
+				    <th style="min-width: 165px;">
+				    	<label><em class="red-star fl">*</em>单价<i>（元）</i></label>
+			    	</th>
+				    <th style="min-width: 165px;">
+				    	<label>特殊货物</label>
+			    	</th>
+				  </tr>
+				  <tr>
+				    <td>
+				    	<input type="text">
+				    </td>
+				    <td>
+				    	<input type="text">
+				    </td>
+				    <td>
+				    	<input type="text">
+				    </td>
+				    <td>
+				    	<input type="text">
+				    </td>
+				    <td>
+				    	<input type="text" placeholder="长*宽*高*件">
+				    </td>
+				    <td>
+				    	<input type="text" style="width: 40%">
+				    	<select name="" id="" style="width: 50px;">
+				    		<option value="公斤">公斤</option>
+				    	</select>
+				    </td>
+				    <td>
+				    	<input type="text" style="width: 30%;">
+				    	<select name="" id="" style="width: 100px;">
+				    		<option value="无">无</option>
+				    	</select>
+				    </td>
+				  </tr>
+			</table>
+			<div class="mt-10 item">
+				<input type="radio" class="fl mt-3"><span class="items fl">自提</span>
+				<input type="radio" class="fl mt-3"><span class="items fl">配送</span>
+				<input type="checkbox" class="fl mt-3"><span class="items fl">上门提货</span>
+				<input type="checkbox" class="fl mt-3"><span class="items fl">等通知付货</span>
+				<input type="checkbox" class="fl mt-3"><span class="items fl">整车</span>
+				<span class="fl">回单类型：</span>
+				<select name="" id="" class="fl slip-type">
+					<option value="无">无</option>
+				</select>
+				<input type="text" class="fl"><span class="fl mr-20">份</span>
+				<span class="fl">运输方式：</span>
+				<select name="" id="" class="fl shipping-type">
+					<option value="汽运">汽运</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+	<div class="module-two mb-10">
+		<h2 class="title-blue">
+			收入明细
+		</h2>
+		<div class="bg-gary">
+			
+		</div>
+		<div class="module-two-content">
+			<table class="income-table">
+				<tr>
+					<td style="min-width: 120px;">
+						<label class="fl mr-8">运费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 120px;">
+						<label class="fl mr-8">提货费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 120px;">
+						<label class="fl mr-8">配送费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 130px;">
+						<label class="fl mr-8">声明价值</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 120px;">
+						<label class="fl mr-8">保价费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 130px;">
+						<label class="fl mr-8">代收货款</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 140px;">
+						<label class="fl mr-8">贷款手续费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 130px;">
+						<label class="fl mr-8">其他</label>
+						<input class="text fl" type="text">
+					</td>
+				</tr>
+				 <tr>
+					<td style="min-width: 120px;">
+						<label class="fl mr-8">回单费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 120px;">
+						<label class="fl mr-8">装卸费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 120px;">
+						<label class="fl mr-8">上楼费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 130px;">
+						<label class="fl mr-8">安装费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 130px;">
+						<label class="fl mr-8">中转费</label>
+						<input class="text fl" type="text">
+					</td>
+					<td style="min-width: 130px; line-height: 26px;">
+						<span class="ins fl">
+							<img class="fl" src="ins.png" alt="">
+							<label class="fl">保险费</label>
+						</span>
+						<em class="fl">0</em><em class="fl">元</em>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="module-two mb-10">
+		<h2 class="title-blue">
+			结算信息
+		</h2>
+		<div class="bg-gary">
+			运费合计:
+			<span class="cost-red ml-10"></span><span class="cost-red">元</span>
+			<label class="mr-8 ml-10"><em class="red-star fl mt-3">*</em>付款方式：</label>
+			<select name="" id="">
+				<option value="现付">现付</option>
+			</select>
+		</div>
+		<div class="module-two-content">
+			<table class="settlement-table">
+				<tr>
+					<td class="active" style="min-width: 145px;">现付</td>
+					<td style="min-width: 145px;">提付</td>
+					<td style="min-width: 140px;">回付</td>
+					<td style="min-width: 140px;">月结</td>
+					<td style="min-width: 140px;">欠付</td>
+					<td style="min-width: 140px;">贷款扣</td>
+					<td style="min-width: 140px;">货到打卡</td>
+				</tr>
+				<tr>
+					<td class="active">888.6</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="module-three">
+		<div class="module-two fl left">
+			<h2 class="title-blue">
+				支出明细
+			</h2>
+			<div class="bg-gary">
+				
+			</div>
+			<div class="module-two-content">
+				<table class="expenditure-table">
+					<tr>
+						<td style="min-width: 140px;">提货车费</td>
+						<td style="min-width: 140px;">司机</td>
+						<td style="min-width: 140px;">装卸费</td>
+						<td style="min-width: 140px;">信息费</td>
+						<td style="min-width: 142px;">现返</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="button" class="add-driver" value="+" /></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>	
+		<div class="module-two fr right">
+			<h2 class="title-blue">
+				添加备注
+			</h2>
+			<div class="bg-gary">
+				
+			</div>
+			<div class="module-two-content">
+				<textarea></textarea>
+			</div>
+		</div>	
+	</div>
+
+<!-- 悬浮按钮 -->
+	<div class="button-bg"></div>
+	<div class="button-area">
+		<input class="btn-primary" type="button" value="保存并打印" />
+		<input class="btn-primary" type="button" value="保存并新增" />
+		<input class="btn-stroke" type="button" value="打开运单列表" />
+	</div>
+	<div class="btn-install">
+		<i></i>运单设置
+	</div>
+<!-- 悬浮按钮 -->
+
+<!-- 右侧详情 -->
+	<div class="price-area">
+		<p class="fl telescopic"><</p>
+		<div class="price-detail fl">
+			<h3 class="cost-price">
+				<span class="fl">卡行成本价</span>
+				<input class="fr price-btn" type="button" value="设置价格" />
+			</h3>
+			<ul>
+				<li>
+					<span class="fl headline">北京至上海</span>
+					<input class="fr price-btn" type="button" value="重选路由" />
+				</li>
+				<li>
+					<span class="fl headline">截单时间</span>
+					<span class="fr right-txt">07:45</span>
+				</li>
+				<li>
+					<span class="fl headline">运输时效</span>
+					<span class="fr right-txt">24h</span>
+				</li>
+				<li class="border-bn">
+					<span class="fl">预计到达时间</span>
+					<span class="fr right-txt">2016-09-18</span>
+				</li>
+			</ul>
+			<h3 class="expenses">费用</h3>
+			<ul>
+				<li>
+					<span class="fl headline">长途运费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">自提费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">配送费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">操作费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">外包管理费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">报价费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">代收货款手续费</span>
+					<span class="fr right-txt">￥13335425.00</span>
+				</li>
+				<li> 
+					<span class="fl headline">回单服务费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">进仓服务费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">商超服务费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+				<li>
+					<span class="fl headline">提货费</span>
+					<span class="fr right-txt">￥10.00</span>
+				</li>
+			</ul>
+			<p class="orange-price">900.00</p>
+			<p class="headline">费用合计（元）</p>
+			<h3 class="bottom-line">
+				<span class="fl align-l">100.00</span>
+				<span class="fr align-r">90%</span>
+			</h3>
+			<h3 class="bottom-line border-line">
+				<span class="fl headline align-l">毛利（元）</span>
+				<span class="fr headline align-r">毛利率</span>
+			</h3>
+			<h3 class="cost-price border-bn">
+				<span class="fl">系统余额不足</span>
+				<input class="fr recharge-btn" type="button" value="去充值" />
+			</h3>
+		</div>
+	</div>
+<!-- 右侧详情 -->
+</div>
+</body>
+</html>
